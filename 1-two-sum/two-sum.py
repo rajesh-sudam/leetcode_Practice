@@ -5,8 +5,8 @@ class Solution:
         #         if nums[i]+nums[j]==target:
         #             return [i,j]
         my_map={}
-        for i in range(len(nums)):
-            diff = target - nums[i]
-            if diff in my_map:
-                return i, my_map[diff]
-            my_map[nums[i]] = i      
+        for i in range(len(nums)): 
+            diff = target - nums[i] # check if difference is present in hashmap
+            if diff in my_map: 
+                return i, my_map[diff] #if difference is found return indexes
+            my_map[nums[i]] = i #if not set key and value in hashmap
