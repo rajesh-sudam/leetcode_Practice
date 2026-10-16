@@ -9,4 +9,5 @@ class Solution:
             diff = target - nums[i] # check if difference is present in hashmap
             if diff in my_map: 
                 return i, my_map[diff] #if difference is found return indexes
+                break
             my_map[nums[i]] = i #if not set key and value in hashmap
