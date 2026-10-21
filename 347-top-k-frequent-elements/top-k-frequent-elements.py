@@ -1,18 +1,19 @@
 class Solution:
     def topKFrequent(self, nums: list[int], k: int) -> list[int]:
-        my_map={}
-        freq=[]
-        for i in range(len(nums)+1):
-            freq.append([])
-        for num in nums:
-            my_map[num]=my_map.get(num,0) + 1
-        for n,c in my_map.items():
-            freq[c].append(n)
-        
-        res=[]
-        for bucket in reversed(freq):
-            for n in bucket:
+        my_map = {}
+
+        for n in nums:
+            my_map[n] = my_map.get(n, 0) + 1
+
+        freq = [[] for _ in range(len(nums) + 1)]
+
+        for n, count in my_map.items():
+            freq[count].append(n)
+
+        res = []
+
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq[i]:
                 res.append(n)
                 if len(res) == k:
-                    return res   
-
+                    return res
