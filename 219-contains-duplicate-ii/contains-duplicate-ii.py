@@ -2,7 +2,6 @@ class Solution:
     def containsNearbyDuplicate(self, nums: list[int], k: int) -> bool:
         my_map={}
         for i in range(len(nums)):
-            arr=[]
             if nums[i] not in my_map:
                 my_map[nums[i]]=[]
 
