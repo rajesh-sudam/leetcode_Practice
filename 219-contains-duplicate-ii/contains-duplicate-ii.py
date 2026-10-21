@@ -9,7 +9,7 @@ class Solution:
             arr=my_map[nums[i]]
 
             if len(arr)>=2:
-                if abs(arr[-1]-arr[-2]<=k):
+                if abs(arr[-1]-arr[-2])<=k:
                     return True
         return False
         
