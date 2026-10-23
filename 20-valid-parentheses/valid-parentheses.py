@@ -1,19 +1,14 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        i=0
-        arr=[]
-        for i in range(len(s)):
-            if s[i]=='('or s[i]=='[' or s[i]=='{':
-                arr.append(s[i])
-            else:
-                if not arr:
+        stack=[]
+        my_map={")":"(","}":"{","]":"["}
+
+        for char in s:
+            if char in my_map.values():
+                stack.append(char)
+            elif char in my_map.keys():
+                if not stack or my_map[char]!=stack.pop():
                     return False
-                top=arr.pop()
-                if s[i]==')' and top!='(':
-                    return False
-                if s[i]==']' and top!='[':
-                    return False
-                if s[i]=='}' and top!='{':
-                    return False
-        return len(arr)==0
+        return not stack
+
         
