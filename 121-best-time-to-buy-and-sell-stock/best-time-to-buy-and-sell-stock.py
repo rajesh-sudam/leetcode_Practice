@@ -5,13 +5,13 @@ class Solution:
 
         maxprofit=0
 
-        while r<len(prices):
+        for r in range(len(prices)):
             if prices[l]<prices[r]:
                 maxprofit=max(maxprofit,prices[r]-prices[l])
             
             else:
                 l=r
             
-            r+=1
+        r+=1
         return maxprofit
         
