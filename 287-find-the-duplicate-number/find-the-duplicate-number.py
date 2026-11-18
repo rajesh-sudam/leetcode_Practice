@@ -4,4 +4,6 @@ class Solution:
         for i in range(len(nums)):
             if nums[i+1]-nums[i]==0:
                 return nums[i]
+            else:
+                continue
         
