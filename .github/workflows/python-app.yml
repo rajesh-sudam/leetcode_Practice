@@ -1,4 +1,4 @@
-
+```yaml
 name: Python LeetCode Practice
 
 on:
@@ -36,7 +36,6 @@ jobs:
           python -m flake8 . \
             --count \
             --select=E9,F63,F7,F82 \
-            --builtins=ListNode,TreeNode,Node,NestedInteger,Interval,Employee,MountainArray,Robot \
             --show-source \
             --statistics
 
@@ -52,9 +51,10 @@ jobs:
       - name: Run pytest
         shell: bash
         run: |
-          if find . -type f -name 'test_*.py' \
-              -not -path './.git/*' | grep -q .; then
+          if find . -type f -name 'test_*.py' -not -path './.git/*' | grep -q .; then
             python -m pytest -v
           else
             echo "No pytest test files found. Skipping tests."
             echo "Add test_*.py files when you are ready to test solutions."
+          fi
+```
